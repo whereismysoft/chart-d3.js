@@ -30,8 +30,8 @@ var chartWidth = chartsWidth / 2;
 for (var i = 0; i < dataset.length; i++) {
   incomeArr.push(dataset[i].income);
   outcomeArr.push(dataset[i].outcome);
-  linearData.push({y: dataset[i].income, x: (i * (groupWidth) + spaceBetweenGroups) });
-  linearData.push({y: dataset[i].outcome, x: (i * (groupWidth) + spaceBetweenGroups) + chartsWidth });
+  linearData.push({y: dataset[i].income, x: (i * groupWidth) + spaceBetweenGroups });
+  linearData.push({y: dataset[i].outcome, x: (i * groupWidth) + spaceBetweenGroups + chartsWidth });
 }
 
 var yScale = d3.scaleLinear()
@@ -85,5 +85,5 @@ var lineFunction = d3.line()
 var lineGraph = svg.append("path")
             .attr("d", lineFunction(linearData))
             .attr("stroke", "blue")
-            .attr("stroke-width", 3)
+            .attr("stroke-width", 2)
             .attr("fill", "none");
