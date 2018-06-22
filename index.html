@@ -2,11 +2,48 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>D3 bar chart</title>
+    <title>D3 bar chart with coordinate system</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    	body {
+    		position: relative;
+    	}
+
+    	.legend {
+		    position: absolute;
+		    opacity: 0;
+		    transition: opacity .2s ease-in;
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		    justify-content: center;
+		    border: 1px solid rgb(0, 0, 0);
+		    border-radius: 5px;
+		    width: 100px;
+		    height: 50px;
+		    background-color: rgba(195, 240, 120, 0.6);
+		    z-index: 1
+    	}
+
+    	.dot {
+    		r: 3;
+    		transition: fill .3s ease-out, stroke-width .3s ease-out, stroke .8s ease-out;
+    		stroke: rgba(0, 0, 255, 1);
+    		fill: rgba(0, 0, 255, 1);
+    		cursor: pointer;
+    		stroke-width: 2;
+    		z-index: 2
+    	}
+
+    	.dot:hover {
+    		fill: rgba(0, 0, 255, 1);
+    		stroke: rgba(0, 0, 255, 0.4);
+    		stroke-width: 9;
+    	}
+	</style>
 </head>
 <body>
-    <h1></h1>
+    <svg width="960" height="500"></svg>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src='index.js'></script>
 </body>
